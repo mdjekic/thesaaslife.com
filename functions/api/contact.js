@@ -25,6 +25,7 @@ export async function onRequestPost(context) {
     }
 
     const BREVO_API_KEY = context.env.BREVO_API_KEY;
+    const SENDER_EMAIL = context.env.SENDER_EMAIL || "contact@thesaaslife.com";
     const CONTACT_EMAIL = context.env.CONTACT_EMAIL || "mdjekic+saaslife@gmail.com";
 
     if (!BREVO_API_KEY) {
@@ -55,7 +56,7 @@ export async function onRequestPost(context) {
         "api-key": BREVO_API_KEY,
       },
       body: JSON.stringify({
-        sender: { name: "SaaS Life Website", email: CONTACT_EMAIL },
+        sender: { name: "SaaS Life Website", email: SENDER_EMAIL },
         to: [{ email: CONTACT_EMAIL, name: "Miloš Đekić" }],
         replyTo: { email, name },
         subject: `[SaaS Life] ${subject}`,
