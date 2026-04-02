@@ -155,84 +155,60 @@ nav a:hover {
   color: var(--black);
 }
 
-/* Companies */
-.companies {
+/* Services */
+.services {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
 }
 
-.company-card {
+.services h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.service-item {
+  padding: 1.5rem;
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
-  overflow: hidden;
   transition: box-shadow 0.2s;
 }
 
-.company-card:hover {
+.service-item:hover {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
-.card-header {
-  background: var(--gray-50);
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.card-header .flag {
-  font-size: 1.5rem;
-}
-
-.card-header h2 {
-  font-size: 1.15rem;
+.service-item h3 {
+  font-size: 1rem;
   font-weight: 600;
-  flex: 1;
-}
-
-.tag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  background: var(--black);
-  color: var(--white);
-}
-
-.card-body {
-  padding: 1.5rem;
-}
-
-.card-body h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
-.card-body h3:first-child {
-  margin-top: 0;
-}
-
-.card-body p {
+.service-item p {
   font-size: 0.9rem;
   color: var(--gray-600);
   line-height: 1.65;
 }
 
-.card-body ul {
+.service-item a {
+  font-weight: 500;
+}
+
+.service-item ul {
   list-style: none;
   padding: 0;
 }
 
-.card-body li {
+.service-item li {
   font-size: 0.9rem;
   color: var(--gray-600);
   line-height: 1.65;
@@ -241,7 +217,7 @@ nav a:hover {
   margin-bottom: 0.5rem;
 }
 
-.card-body li::before {
+.service-item li::before {
   content: "~";
   position: absolute;
   left: 0;
@@ -249,13 +225,9 @@ nav a:hover {
   font-weight: 600;
 }
 
-.card-body a {
-  font-weight: 500;
-}
-
 .upcoming-badge {
   display: inline-block;
-  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -266,25 +238,78 @@ nav a:hover {
   color: var(--black);
 }
 
-.company-details {
-  margin-top: 1.5rem;
+/* Business Entities */
+.companies {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.companies h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.entities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.entity-card {
+  padding: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.entity-card .flag {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.entity-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: var(--black);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.entity-details {
+  text-align: left;
   padding-top: 1rem;
   border-top: 1px solid var(--gray-200);
 }
 
-.company-details p {
+.entity-details p {
   font-size: 0.8rem;
   color: var(--gray-400);
   margin-bottom: 0.25rem;
 }
 
-.company-details a {
+.entity-details a {
   font-size: 0.8rem;
   color: var(--gray-400);
   font-weight: 400;
 }
 
-.company-details a:hover {
+.entity-details a:hover {
   color: var(--black);
 }
 
@@ -403,7 +428,8 @@ footer {
     font-size: 1.05rem;
   }
 
-  .companies {
+  .services-grid,
+  .entities-grid {
     grid-template-columns: 1fr;
   }
 
