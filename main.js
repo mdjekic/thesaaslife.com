@@ -1,51 +1,10 @@
 // =============================================================
-// Language Switching
-// =============================================================
-let currentLang = "en";
-
-const langToggle = document.getElementById("lang-toggle");
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang === "sr" ? "sr" : "en";
-  langToggle.textContent = lang === "en" ? "SR" : "EN";
-
-  document.querySelectorAll("[data-en]").forEach((el) => {
-    const text = el.getAttribute(`data-${lang}`);
-    if (text) {
-      if (el.children.length === 0) {
-        el.textContent = text;
-      } else if (el.tagName === "P" && el.querySelector("a")) {
-        // Link text is the URL itself — no translation needed
-      } else {
-        el.textContent = text;
-      }
-    }
-  });
-
-  document.querySelectorAll("select option[data-en]").forEach((opt) => {
-    const text = opt.getAttribute(`data-${lang}`);
-    if (text) opt.textContent = text;
-  });
-
-  localStorage.setItem("saaslife-lang", lang);
-}
-
-langToggle.addEventListener("click", () => {
-  setLang(currentLang === "en" ? "sr" : "en");
-});
-
-// Restore saved language preference
-const savedLang = localStorage.getItem("saaslife-lang");
-if (savedLang && savedLang !== "en") {
-  setLang(savedLang);
-}
-
-// =============================================================
 // Contact Form — server-side via Cloudflare Pages Function
 // =============================================================
 const form = document.getElementById("contact-form");
 const statusEl = document.getElementById("form-status");
+
+const lang = location.pathname.startsWith("/sr") ? "sr" : "en";
 
 const messages = {
   sending: { en: "Sending...", sr: "Slanje..." },
@@ -65,7 +24,7 @@ form.addEventListener("submit", async (e) => {
   const submitBtn = form.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
   statusEl.className = "form-status";
-  statusEl.textContent = messages.sending[currentLang];
+  statusEl.textContent = messages.sending[lang];
 
   const payload = {
     name: form.name.value.trim(),
@@ -84,7 +43,7 @@ form.addEventListener("submit", async (e) => {
 
     if (res.ok) {
       statusEl.className = "form-status success";
-      statusEl.textContent = messages.success[currentLang];
+      statusEl.textContent = messages.success[lang];
       form.reset();
     } else {
       throw new Error(`HTTP ${res.status}`);
@@ -92,7 +51,7 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     console.error("Contact form error:", err);
     statusEl.className = "form-status error";
-    statusEl.textContent = messages.error[currentLang];
+    statusEl.textContent = messages.error[lang];
   } finally {
     submitBtn.disabled = false;
   }

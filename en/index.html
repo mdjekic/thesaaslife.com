@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS Life</title>
+  <meta name="description" content="SaaS Life — Product Management, Software, Education, AI & Consulting. Companies in Estonia and Serbia.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/en/" class="logo-link">
+        <img src="../logo-black.png" alt="SaaS Life logo" class="logo">
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#companies">Entities</a>
+        <a href="#contact">Contact</a>
+        <a href="/sr/" class="lang-switch">SR</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>SaaS Life</h1>
+    <p class="subtitle">Product Management. Software. Education. AI. Consulting.</p>
+    <p class="intro">Two companies, one mission — building better products and teams through technology, education, and hands-on consulting.</p>
+  </section>
+
+  <section class="founder">
+    <p>Founded by Miloš Đekić</p>
+    <a href="https://milos.djekic.net/" target="_blank" rel="noopener">milos.djekic.net</a>
+  </section>
+
+  <section id="services" class="services">
+    <h2>What We Do</h2>
+
+    <div class="services-grid">
+      <div class="service-item">
+        <h3>Education & Consulting</h3>
+        <p>Agile Methodology, Design Thinking, Scrum Master, and Product Manager trainings for international clients across banking, insurance, and other industries. Sourcing and delivering expert consultants since 2021.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>Process & Business Optimization</h3>
+        <p>Helping businesses streamline their operations by implementing tools like Notion, Monday.com, ClickUp, and other platforms — from workflow design to full adoption and team onboarding.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>Software</h3>
+        <p>End-to-end product management and software development consulting. From product strategy and roadmap planning to hands-on delivery with engineering teams.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>Applied AI</h3>
+        <ul>
+          <li>AI Readiness Training — helping corporations adopt AI in day-to-day operations</li>
+          <li>AI Implementation Consulting — AI chatbots, workflows, internal tooling, and customer-facing software through Agile / Scrum</li>
+        </ul>
+      </div>
+
+      <div class="service-item">
+        <h3>Online Education</h3>
+        <p><a href="https://produktivnost.rs" target="_blank" rel="noopener">produktivnost.rs</a></p>
+        <p>A regional online community of productivity enthusiasts in the Balkans, featuring a masterclass combining GTD and PARA methodologies.</p>
+        <p class="course-collab"><a href="https://www.krojacevaskola.com/kursevi/osnove-produkt-menadzmenta" target="_blank" rel="noopener">Product Management Fundamentals</a></p>
+        <p>A course for aspiring Product Managers covering the journey from beginner to expert. Created in collaboration with <a href="https://www.krojacevaskola.com" target="_blank" rel="noopener">Krojačeva Škola</a>.</p>
+      </div>
+
+      <div class="service-item">
+        <div class="upcoming-badge">Coming Soon</div>
+        <h3><a href="https://zgrada.online" target="_blank" rel="noopener">zgrada.online</a></h3>
+        <p>A SaaS platform helping professional building managers and residents collaborate more effectively.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="companies" class="companies">
+    <h2>Business Entities</h2>
+
+    <div class="entities-grid">
+      <div class="entity-card">
+        <span class="flag">🇪🇪</span>
+        <h3>SaaS Life OÜ</h3>
+        <span class="tag">Estonia</span>
+        <div class="entity-details">
+          <p>Reg. No: 16345451</p>
+          <p>VAT: EE102596506</p>
+          <p>Address: Sepapaja tn 6, 15551 Tallinn</p>
+          <p><a href="https://ariregister.rik.ee/eng/company/16345451/SAAS-Life-O%C3%9C" target="_blank" rel="noopener">Estonian Business Register</a></p>
+        </div>
+      </div>
+
+      <div class="entity-card">
+        <span class="flag">🇷🇸</span>
+        <h3>SaaS LIFE doo</h3>
+        <span class="tag">Serbia</span>
+        <div class="entity-details">
+          <p>Reg. No: 21567787</p>
+          <p>Tax ID: 111910231</p>
+          <p>Address: Heroja Maričića 93, 36000 Kraljevo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p class="contact-sub">Have a question or want to work together? Drop a message.</p>
+
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Regarding</label>
+        <select id="company" name="company">
+          <option value="general">General Inquiry</option>
+          <option value="estonia">SaaS Life OÜ (Estonia)</option>
+          <option value="serbia">SaaS LIFE doo (Serbia)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+      <p id="form-status" class="form-status" role="status"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 SaaS Life. All rights reserved.</p>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

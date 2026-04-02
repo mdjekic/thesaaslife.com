@@ -88,23 +88,20 @@ nav a:hover {
   color: var(--black);
 }
 
-#lang-toggle {
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: 600;
+.lang-switch {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
   letter-spacing: 0.05em;
   padding: 0.35rem 0.75rem;
   border: 1.5px solid var(--black);
   border-radius: 6px;
-  background: transparent;
-  color: var(--black);
-  cursor: pointer;
+  color: var(--black) !important;
   transition: background 0.15s, color 0.15s;
 }
 
-#lang-toggle:hover {
+.lang-switch:hover {
   background: var(--black);
-  color: var(--white);
+  color: var(--white) !important;
 }
 
 /* Hero */
@@ -222,6 +219,16 @@ nav a:hover {
   position: absolute;
   left: 0;
   color: var(--gray-400);
+  font-weight: 600;
+}
+
+.course-collab {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--gray-200);
+}
+
+.course-collab a {
   font-weight: 600;
 }
 
