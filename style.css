@@ -112,6 +112,12 @@ nav a:hover {
   text-align: center;
 }
 
+.hero-logo {
+  height: 120px;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
