@@ -9,12 +9,12 @@ const lang = location.pathname.startsWith("/sr") ? "sr" : "en";
 const messages = {
   sending: { en: "Sending...", sr: "Slanje..." },
   success: {
-    en: "Message sent! I'll get back to you soon.",
-    sr: "Poruka poslata! Javim se uskoro.",
+    en: "Message sent! We'll get back to you soon.",
+    sr: "Poruka poslata! Javićemo vam se uskoro.",
   },
   error: {
-    en: "Something went wrong. Please try again or email me directly.",
-    sr: "Nešto nije u redu. Pokušajte ponovo ili mi pišite direktno.",
+    en: "Something went wrong. Please try again or email us directly.",
+    sr: "Nešto nije u redu. Pokušajte ponovo ili nam pišite direktno.",
   },
 };
 
@@ -26,13 +26,10 @@ form.addEventListener("submit", async (e) => {
   statusEl.className = "form-status";
   statusEl.textContent = messages.sending[lang];
 
-  const payload = {
-    name: form.name.value.trim(),
-    email: form.email.value.trim(),
-    subject: form.subject.value.trim(),
-    company: form.company.value,
-    message: form.message.value.trim(),
-  };
+  // Send whatever fields the form has (homepage and AI Partner forms differ)
+  const payload = Object.fromEntries(
+    [...new FormData(form)].map(([key, value]) => [key, value.trim()])
+  );
 
   try {
     const res = await fetch("/api/contact", {
@@ -56,3 +53,15 @@ form.addEventListener("submit", async (e) => {
     submitBtn.disabled = false;
   }
 });
+
+// =============================================================
+// Sticky mobile CTA — hide while the contact form is on screen
+// =============================================================
+const stickyCta = document.querySelector(".sticky-cta");
+const contactSection = document.getElementById("contact");
+
+if (stickyCta && contactSection && "IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    stickyCta.classList.toggle("hidden", entry.isIntersecting);
+  }).observe(contactSection);
+}

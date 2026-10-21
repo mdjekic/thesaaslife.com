@@ -6,7 +6,10 @@ export async function onRequestPost(context) {
   };
 
   try {
-    const { name, email, subject, company, message } = await context.request.json();
+    const body = await context.request.json();
+    const { name, email, company, message, website, source } = body;
+    const isAiPartner = source === "ai-partner";
+    const subject = isAiPartner ? `AI Partner inquiry from ${name}` : body.subject;
 
     // Basic validation
     if (!name || !email || !subject || !message) {
@@ -46,7 +49,12 @@ export async function onRequestPost(context) {
     const escapedEmail = escapeHtml(email);
     const escapedSubject = escapeHtml(subject);
     const escapedMessage = escapeHtml(message).replace(/\n/g, "<br>");
-    const escapedCompany = escapeHtml(companyLabels[company] || company || "General Inquiry");
+    const escapedCompany = escapeHtml(
+      isAiPartner ? "Fractional AI Partner" : companyLabels[company] || company || "General Inquiry"
+    );
+    const websiteLine = website
+      ? `<p><strong>Website:</strong> ${escapeHtml(website)}</p>`
+      : "";
 
     const res = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
@@ -59,11 +67,12 @@ export async function onRequestPost(context) {
         sender: { name: "SaaS Life Website", email: SENDER_EMAIL },
         to: [{ email: CONTACT_EMAIL, name: "Miloš Đekić" }],
         replyTo: { email, name },
-        subject: `[SaaS Life] ${subject}`,
+        subject: `[SaaS Life${isAiPartner ? " · AI Partner" : ""}] ${subject}`,
         htmlContent: `
           <h2>${escapedSubject}</h2>
           <p><strong>From:</strong> ${escapedName} &lt;${escapedEmail}&gt;</p>
           <p><strong>Regarding:</strong> ${escapedCompany}</p>
+          ${websiteLine}
           <hr>
           <p>${escapedMessage}</p>
         `,
