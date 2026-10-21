@@ -317,10 +317,18 @@ a.partner:hover img {
 }
 
 .entity-card {
-  padding: 1.5rem;
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
   text-align: center;
+  overflow: hidden;
+}
+
+.entity-head {
+  padding: 1.5rem 1.5rem 1.25rem;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08), transparent 50%),
+    linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
 }
 
 .entity-card .flag {
@@ -348,21 +356,73 @@ a.partner:hover img {
   margin-bottom: 1rem;
 }
 
+.entity-card .tag {
+  background: var(--white);
+  color: var(--black);
+  margin-bottom: 0;
+}
+
 .entity-details {
   text-align: left;
-  padding-top: 1rem;
-  border-top: 1px solid var(--gray-200);
+  padding: 1.25rem 1.5rem 1.5rem;
 }
 
 .entity-details p {
-  font-size: 0.8rem;
-  color: var(--gray-400);
+  font-size: 0.85rem;
+  color: var(--gray-600);
   margin-bottom: 0.25rem;
 }
 
-.entity-details a {
+.entity-table {
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-bottom: 0.25rem;
+}
+
+.entity-table th,
+.entity-table td {
+  padding: 0.15rem 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.entity-table th {
+  text-align: right;
+  font-weight: 400;
+  padding-right: 1rem;
+  white-space: nowrap;
+}
+
+.entity-table td {
+  color: var(--black);
+}
+
+.entity-details .entity-link {
+  text-align: center;
+  margin: 1rem 0 0;
+}
+
+.entity-details .entity-link a {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border: 1.5px solid var(--black);
+  border-radius: 8px;
   font-size: 0.8rem;
-  color: var(--gray-400);
+  font-weight: 600;
+  color: var(--black);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.entity-details .entity-link a:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.entity-details a {
+  font-size: 0.85rem;
+  color: var(--gray-600);
   font-weight: 400;
 }
 
@@ -617,12 +677,17 @@ footer {
 }
 
 nav a.nav-accent {
-  color: var(--black);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--white);
   font-weight: 600;
+  transition: background 0.15s;
 }
 
 nav a.nav-accent:hover {
-  color: var(--gray-600);
+  background: var(--gray-800);
+  color: var(--white);
 }
 
 nav a.btn-accent,
