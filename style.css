@@ -304,8 +304,7 @@ a.partner:hover img {
 .clients .logo-otp { height: 20px; }
 .clients .logo-raiffeisen { height: 24px; }
 
-.clients img:hover,
-.clients a:hover img {
+.clients img:hover {
   filter: none;
   opacity: 1;
 }
