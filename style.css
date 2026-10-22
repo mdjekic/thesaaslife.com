@@ -431,24 +431,6 @@ a.partner:hover img {
 }
 
 /* Contact */
-.contact {
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 5rem;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
-}
-
-.contact-sub {
-  color: var(--gray-600);
-  margin-bottom: 2rem;
-}
-
 .form-group {
   margin-bottom: 1.25rem;
 }
@@ -550,9 +532,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .contact h2 {
-    font-size: 1.6rem;
-  }
 }
 
 @media (max-width: 420px) {
@@ -574,7 +553,7 @@ footer {
 }
 
 /* =============================================================
-   AI Partner — homepage banner
+   AI Partner - homepage banner
    ============================================================= */
 .ai-banner {
   position: relative;
@@ -703,7 +682,7 @@ nav a.btn-accent:hover {
 }
 
 /* =============================================================
-   AI Partner — landing page
+   AI Partner - landing page
    ============================================================= */
 .lp-section {
   max-width: var(--max-width);
@@ -1126,8 +1105,19 @@ nav a.btn-accent:hover {
 
 /* Final CTA */
 .lp-cta {
-  background: var(--black);
   color: var(--white);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08), transparent 45%),
+    linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+}
+
+.lp-cta .lead a {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.lp-cta .lead a:hover {
+  color: var(--gray-200);
 }
 
 .lp-cta-inner {
@@ -1181,6 +1171,7 @@ nav a.btn-accent:hover {
 }
 
 .lp-cta .form-group input:focus,
+.lp-cta .form-group select:focus,
 .lp-cta .form-group textarea:focus {
   border-color: var(--accent);
 }

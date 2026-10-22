@@ -1,5 +1,5 @@
 // =============================================================
-// Contact Form — server-side via Cloudflare Pages Function
+// Contact Form - server-side via Cloudflare Pages Function
 // =============================================================
 const form = document.getElementById("contact-form");
 const statusEl = document.getElementById("form-status");
@@ -55,7 +55,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 // =============================================================
-// Sticky mobile CTA — hide while the contact form is on screen
+// Sticky mobile CTA - hide while the contact form is on screen
 // =============================================================
 const stickyCta = document.querySelector(".sticky-cta");
 const contactSection = document.getElementById("contact");
