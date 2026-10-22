@@ -270,11 +270,15 @@ a.partner:hover img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem 1.25rem;
+  gap: 0.9rem 1.4rem;
   margin-top: 1rem;
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--gray-400);
+}
+
+.clients span {
+  flex-basis: 100%;
 }
 
 .clients img {
@@ -290,6 +294,17 @@ a.partner:hover img {
   height: 15px;
 }
 
+.clients .logo-bat { height: 18px; }
+.clients .logo-coca-cola { height: 18px; }
+.clients .logo-generali { height: 15px; }
+.clients .logo-novartis { height: 17px; }
+.clients .logo-roche { height: 26px; }
+.clients .logo-jti { height: 26px; }
+.clients .logo-erste { height: 26px; }
+.clients .logo-otp { height: 20px; }
+.clients .logo-raiffeisen { height: 24px; }
+
+.clients img:hover,
 .clients a:hover img {
   filter: none;
   opacity: 1;
