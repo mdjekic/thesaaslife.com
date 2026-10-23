@@ -861,6 +861,66 @@ nav a.btn-accent:hover {
   box-shadow: 4px 4px 0 var(--accent);
 }
 
+/* What we build */
+.build {
+  margin-top: 3rem;
+}
+
+.build h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.build-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.build-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--gray-800);
+}
+
+.build-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.tools-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-600);
+  margin-bottom: 0.75rem;
+}
+
+.tools {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tools li {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
 .lp-band {
   background: var(--gray-50);
   border-top: 1px solid var(--gray-200);
@@ -1235,6 +1295,7 @@ nav a.btn-accent:hover {
 
   .pain-list,
   .lp-cards,
+  .build-list,
   .terms,
   .team,
   .lp-cta-inner {
