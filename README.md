@@ -7,7 +7,8 @@ Bilingual (English / Serbian) static site hosted on Cloudflare Pages with a serv
 ## Structure
 
 ```
-/                  → redirects to /en/
+/                  → 302 to the lang cookie's language (set by the EN/SR switch) if present;
+                     otherwise /sr/ for visitors from RS, ME, BA, HR and /en/ for everyone else
 /en/               → English version
 /sr/               → Serbian version
 /api/contact       → Cloudflare Pages Function (contact form endpoint)

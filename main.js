@@ -1,4 +1,16 @@
 // =============================================================
+// Language switch - remember the choice for the root redirect
+// =============================================================
+document.querySelectorAll(".lang-switch").forEach((link) => {
+  link.addEventListener("click", () => {
+    const lang = new URL(link.href).pathname.split("/")[1];
+    if (lang === "sr" || lang === "en") {
+      document.cookie = `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax; Secure`;
+    }
+  });
+});
+
+// =============================================================
 // Contact Form - server-side via Cloudflare Pages Function
 // =============================================================
 const form = document.getElementById("contact-form");
